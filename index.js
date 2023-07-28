@@ -21,7 +21,11 @@ function getRequiredPanels(totalPower, availablePanelsArray) {
 	return requiredPanels;
 }
 
-function getSolarPanelInfo(totalPower) {
+function getInvertersQty(requiredPanels){
+	return Math.ceil(requiredPanels.length/4)
+}
+
+function getSolarPanelInfos(totalPower) {
   // Verificar se precisamos de mais de um tipo de painel
 	const availablePanelsArray = [
 		{
@@ -32,19 +36,8 @@ function getSolarPanelInfo(totalPower) {
 	];
 
   const requiredPanels = getRequiredPanels(totalPower, availablePanelsArray);
-	const invertersQty = getInvertersQty();
+	const invertersQty = getInvertersQty(requiredPanels);
 	const totalLength = getTotalLength();
 	const totalArea = getTotalArea();
 }
 
-console.log(Math.ceil([
-  { powerInWatt: 550, length: 1.95, with: 1.1 },
-  { powerInWatt: 550, length: 1.95, with: 1.1 },
-  { powerInWatt: 550, length: 1.95, with: 1.1 },
-  { powerInWatt: 550, length: 1.95, with: 1.1 },
-  { powerInWatt: 550, length: 1.95, with: 1.1 },
-  { powerInWatt: 550, length: 1.95, with: 1.1 },
-  { powerInWatt: 550, length: 1.95, with: 1.1 },
-  { powerInWatt: 550, length: 1.95, with: 1.1 },
-  { powerInWatt: 550, length: 1.95, with: 1.1 }
-].length/4));
