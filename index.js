@@ -22,10 +22,20 @@ function getRequiredPanels(totalPower, availablePanelsArray) {
 }
 
 function getInvertersQty(requiredPanels){
-	return Math.ceil(requiredPanels.length/4)
+	return Math.ceil(requiredPanels.length/4);
+}
+
+function isNumber(value) {
+  return !isNaN(value);
 }
 
 function getSolarPanelInfos(totalPower) {
+
+	if ( isNaN(totalPower) || totalPower < 0 ) {
+		console.log("Valor de potência máxima inválida, por favor insira um valor numérico maior quem zero.");
+		return;
+	}
+
   // Verificar se precisamos de mais de um tipo de painel
 	const availablePanelsArray = [
 		{
