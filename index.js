@@ -30,6 +30,11 @@ function isNumber(value) {
   return !isNaN(value);
 }
 
+function getTotalLength(requiredPanels) {
+	const totalLength = requiredPanels.reduce((acc, currValue)=>acc+currValue.length,0).toFixed(2);
+	return parseFloat(totalLength);
+}
+
 function getSolarPanelInfos(totalPower, selectedPanel) {
   if (isNaN(totalPower) || totalPower < 0) {
     console.log(
