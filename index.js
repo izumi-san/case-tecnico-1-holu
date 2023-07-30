@@ -1,15 +1,3 @@
-/*
-Teste técnico
-
-Criar um programa que receba a potencia total (kW)
-Retorne:
- - A quantidade de placas e inversores (1 inversor para cada 4 placas);
- - Potencia do painel utilizado (Watts);
- - Comprimento da estrutura (metros);
- - Área Útil (metros quadrados);
-
-*/
-
 function getRequiredPanels(totalPower, panel) {
   let auxTotalPower = totalPower;
 	//em caso de mais de um tipo de painel diferente podemos usar uma estrutura de array
